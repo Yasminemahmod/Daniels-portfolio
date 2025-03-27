@@ -1,0 +1,330 @@
+/* ================== home ================== */
+.home{
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url(../images/bg.jpg);
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+}
+
+.nav-link-fs {
+  font-size: 14px;
+}
+.nav-underline .nav-link.active, .nav-underline .show>.nav-link {
+  font-weight: 400;
+  border-bottom: none;
+  
+}
+.scroll-nav {
+  background-color: #fff;
+  --bs-white-rgb: 33, 37, 41;
+  box-shadow: 0 0 50px -11px #cccccccf;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+#nav{
+  .nav-underline .nav-link {
+    position: relative;
+    --bs-nav-underline-border-width: 0;
+    border-bottom: var(--bs-nav-underline-border-width) solid transparent;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 0;
+      background-color: #212529;
+      transition-duration: 0.5s;
+    }
+    &.active::after {
+      transition-duration: .5s;
+      width: 100%;
+    }
+    &[href="#home"]::after {
+      background-color: #fff;
+    }
+  }
+}
+.home-ground {
+  top: 25%;
+  h1 {
+    width: fit-content;
+  }
+}
+
+/* nav icon */
+@media (max-width: 992px) {
+  .show {
+    position: absolute;
+    top: 88px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    .nav-underline .nav-link::after,
+    .nav-underline .nav-link::before {
+      display: none;
+    }
+    & > ul.nav li {
+      width: 100%;
+    }
+  } 
+  ul.nav {
+    width: 100%;
+    display: block;
+    text-align: center;
+    background-color: #fff;
+    flex-direction: column !important;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    padding: 0;
+    height: 0;
+    /* transform: scaleY(0); */
+    /* transform-origin: top; */
+    transition-duration: 0.5s;
+    overflow: hidden;
+  }
+  .show > .nav{
+    position: absolute;
+    display: flex;
+    padding: 25px 0;
+    /* transform: scaleY(1); */
+    width: 100%;
+    height: fit-content;
+    transition-duration: 0.5s;
+  }
+  .nav-underline.nav a.text-white {
+    --bs-white-rgb: 0, 0, 0;
+    font-size: 13px;
+  }
+}
+
+/* Onload part */
+.onload {
+  display: none;
+  opacity: 0;
+  z-index: -1;
+  animation: loading 0.7s 1 linear;
+}
+.onload::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 50%;
+  background-color: #fff;
+  animation: translate-top 0.7s 1 linear;
+}
+.onload::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  background-color: #fff;
+  animation: translate-bottom 1s 1 linear;
+}
+.spinner-border {
+  --bs-spinner-width: 3rem;
+  --bs-spinner-height: 3rem;
+  --bs-spinner-border-width: 0.5em;
+  border: var(--bs-spinner-border-width) solid #fff;
+  border-right-color: currentcolor;
+}
+
+@keyframes loading {
+  from {
+    opacity: 1;  
+    z-index: 1;
+  }
+  to {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+@keyframes translate-top {
+  from {
+    height: 50%;
+  }
+  to {
+    height: 0;
+  }
+}
+@keyframes translate-bottom {
+  from {
+    height: 50%;
+  }
+  to {
+    height: 0;
+  }
+}
+
+
+/* ================== about ================== */
+.about .img::before {
+  content: "";
+  position: absolute;
+  width: 83%;
+  height: 79%;
+  bottom: -32px;
+  left: -32px;
+  background-image: radial-gradient(#0003 1px, transparent 0%);
+  background-size: 10px 10px;
+  z-index: -1;
+}
+.progress-part .progress {
+  height: 25px;
+  box-shadow: inset 0 2px 7px 0 #ccc;
+  background-color: #eeeeee69;
+}
+.progress-bar {
+  overflow: hidden;
+  width: 0;
+  transition: 0.5s;
+}
+
+/* ================== Services ================== */
+.services-items__item {
+  .services-icon {
+    width: 70px;
+    height: 70px;
+    transition-duration: 0.5s;
+  }
+  &:hover .services-icon {
+    background-color: #212529;
+    color: #fff;
+  }
+}
+
+
+/* ================== portfolio ================== */
+.portfolio span {
+  cursor: pointer;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    background-color: #212529;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    transition-duration: 0.5s;
+  }
+  &.active::after {
+    width: 100%;
+  }
+}
+.portfolio-items__item {
+  transition: 0.5s;
+}
+.portfolio-items__innerItem{
+  .portfolio-items__title {
+    transition-duration: 0.5s;
+  }
+  .portfolio-items__title {
+    top: 8px;
+    bottom: 0;
+    left: 4px;
+    right: 4px;
+    transition-duration: 0.5s;
+  }
+  &:hover .portfolio-items__title {
+    opacity: 0.95 !important;
+    gap: 0 !important;
+    top: 4px;
+    bottom: 4px;
+  }
+
+}
+.portfolio-icon {
+  width: 30px;
+  height: 30px;
+  &:hover {
+    --bs-black-rgb : 255, 255, 255;
+    background-color: rgba(var(--bs-black-rgb), var(--bs-bg-opacity));
+    border: 1px solid #000;
+  }
+  &:hover i {
+    --bs-white-rgb: 0,0,0;
+  }
+}
+
+
+/* ================== Testimonials ================== */
+.carousel-item .img {
+  width: 100px;
+  height: 100px;
+}
+.carousel-indicators [data-bs-target] {
+  width: 10px;
+  height: 10px;
+  background-color: #9E9E9E;
+}
+
+
+/* ================== our team ================== */
+.img-bg {
+  top: 120px;
+  bottom: 120px;
+  left: 120px;
+  right: 120px;
+  transition-duration: 0.5s;
+  opacity: 95%;
+  .icon {
+    width: 40px;
+    height: 40px;
+    top: 30%;
+    &:hover {
+      --bs-black-rgb : 255, 255, 255;
+      background-color: rgba(var(--bs-black-rgb), var(--bs-bg-opacity));
+      border: 1px solid #000;
+    }
+    &:hover i {
+      --bs-white-rgb: 0,0,0;
+    }
+  }
+}
+.our-team-items__item {
+  transition-duration: 0.5s;
+  img {
+    transition-duration: 0.5s;
+  }
+  &:hover img {
+    transform: scale(1.2);
+  }
+  &:hover .img-bg {
+    top: 4px;
+    bottom: 4px;
+    left: 4px;
+    right: 4px;
+    opacity: 0.95 !important;
+    transform: rotateY(360deg);
+  }
+}
+
+
+/* ================== contact ================== */
+.contact-info .details {
+  .icon {
+    width: 60px;
+    height: 60px;
+    transition-duration: 0.5s;
+  }
+  &:hover .icon {
+    background-color: #212529;
+  }
+  i {
+    transition-duration: 0.5s;
+  }
+  &:hover i {
+    color: #fff;
+  }
+}
+textarea#msg {
+  outline: none;
+}

@@ -1,0 +1,116 @@
+/* ============= General Style ================= */
+body {
+  font-family: "Montserrat", sans-serif;
+  --bs-border-width: 2px;
+  scroll-behavior: smooth;
+}
+
+.btn-dark {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #212529;
+  --bs-btn-border-color: #212529;
+  --bs-btn-hover-color: #212529;
+  --bs-btn-hover-bg: #fff;
+  --bs-btn-hover-border-color: #212529;
+}
+.btn-light {
+  --bs-btn-color: #212529;
+  --bs-btn-bg: #fff;
+  --bs-btn-border-color: #212529;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #212529;
+  --bs-btn-hover-border-color: #fff;
+}
+.btn:hover {
+  color: var(--bs-btn-hover-color) !important;
+}
+.btn {
+  transition-duration: 0.5s;
+}
+.bg-light-gray {
+  background-color: #F7F7F7;
+}
+.bg-dark-gray {
+  background-color: #5B5B5B;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+.fs-50 {
+  font-size: 50px;
+}
+.fs-12 {
+  font-size: 12px;
+}
+.fs-11 {
+  font-size: 11px;
+}
+.fs-13 {
+  font-size: 13px;
+}
+.fs-14 {
+  font-size: 14px;
+}
+.fw-800 {
+  font-weight: 800;
+}
+.fw-900 {
+  font-weight: 900;
+}
+.fw-200 {
+  font-weight: 200;
+}
+.p-6-12 {
+  padding: 6px 12px;
+}
+.ls-2 {
+  letter-spacing: 2px;
+}
+.opacity-95 {
+  opacity: 0.95;
+}
+.opacity-90 {
+  opacity: 0.9;
+}
+
+.section h2::before {
+  content: "";
+  position: absolute;
+  width: 194px;
+  height: 27px;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: radial-gradient(#0002 1px, transparent 0%);
+  background-size: 10px 10px;
+}
+
+input {
+  outline: none;
+}
+input::placeholder,
+textarea::placeholder {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+
+
+@media (min-width: 1400px) {
+  .container {
+      max-width: 1140px;
+  }
+}
+
+
+
